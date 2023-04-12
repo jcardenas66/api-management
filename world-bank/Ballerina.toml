@@ -1,0 +1,12 @@
+[build-options]
+  observabilityIncluded = true
+
+[package]
+  distribution = "2201.3.1"
+  export = ["world_bank_indicator_api"]
+  icon = "docs/icon.png"
+  keywords = ["Kind/Sample","Type/Service","Category/Service","Internal/http"]
+  name = "world_bank_indicator_api"
+  org = "dearxservicesptyltd"
+  version = "3.1.1"
+
