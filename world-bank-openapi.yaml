@@ -1,0 +1,60 @@
+openapi: 3.0.1
+info:
+  title: World Bank
+  description: This api is used to connect to the World Bank service
+  version: 1.0.0
+servers:
+  - url: /
+security:
+  - default: []
+paths:
+  /country/{code}:
+    get:
+      description: World Bank Specific Country Indicator
+      operationId: WBOCountryIndicator
+      parameters:
+        - name: code
+          in: path
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+            format: string
+        - name: format
+          in: query
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ok
+      security:
+        - default: []
+  /country:
+    get:
+      description: World Bank Country Indicator List
+      operationId: WBOCountryList
+      parameters:
+        - name: format
+          in: query
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ok
+      security:
+        - default: []
+components:
+  securitySchemes:
+    default:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: https://test.com
+          scopes: {}
